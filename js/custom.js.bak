@@ -1,0 +1,294 @@
+﻿ $(document).ready(function(){
+	var w_hei = $(window).height();
+	$("#section01").css("height",w_hei);
+	$("#section01 div").css("height",w_hei);
+	$("#section02").css("height",w_hei);
+	$("#section03").css("height",w_hei);
+	$("#section04").css("height",w_hei);
+	$("#section05").css("height",w_hei);
+	$("#section06").css("height",w_hei);
+	$("#section07").css("height",w_hei);
+	$("#section08").css("height",w_hei);
+
+	
+	//메인 마우스 움직임에 따라 전등 움직이는 효과 이벤트
+	$(window).on("mousemove",function(e){
+		var x = e.pageX;
+		var y = e.pageY;
+		$("#section01 div").css("left",x/50).css("z-index","7");
+		$("#section01 div").css("top",y/220).css("z-index","7");
+		
+	});
+
+
+
+
+	$("#section01").on("mousewheel",function(event,delta){
+		var scroll = $(window).scrollTop();
+		if(delta < 0){
+			$("#section02").stop().animate({"top":-w_hei},1300,"easeOutBounce");
+			$("#section03").stop().animate({"top":-w_hei},800);
+			$(".main_logo").css("display","none");
+			$("html,body").stop().animate({"scrollTop":0},1000);
+			
+		}
+
+	});
+
+	//section02 마우스 휠 내릴때이벤트
+	$("#section02").on("mousewheel",function(event,delta){
+		var scroll = $(window).scrollTop();
+		 var offTop = $("#section03").offset().top;
+		if(delta < 0){
+			$("html,body").stop().animate({"scrollTop":offTop},1300,"easeOutBounce",function(){
+				$("#section03 div.menu").animate({"left":"50%"},1000)
+			});
+									
+		}
+
+	});
+	//section02 마우스 휠 올렸을때 이벤트
+	$("#section02").on("mousewheel",function(event,delta){
+		var scroll = $(window).scrollTop();
+		
+		if(delta > 0){
+			$("#section02").stop().animate({"top":w_hei},1000,"easeOutBounce");
+		
+									
+		}
+
+	});
+
+
+	//section03 마우스 휠이벤트
+	$("#section03").on("mousewheel",function(event,delta){		
+		var hei = $("#section04").height();	
+		if(delta < 0){
+			$("#section04").stop().animate({"top":hei},1000,"easeOutBounce",function(){
+				$("#section04 div.menu").animate({"top":"40%"},1000)
+			});									
+		}
+		$("html,body").stop().animate({"scrollTop":"974px"},1000);
+
+	});
+	$("#section03").on("mousewheel",function(event,delta){		
+		if(delta > 0){
+			$("html,body").stop().animate({"scrollTop":"0px"},1000,"easeOutBounce");									
+		}
+		
+
+	});
+
+
+	
+	$("#section04").on("mousewheel",function(event,delta){			
+		var hei = $("#section04").height();	
+		if(delta > 0){
+			$("#section04").stop().animate({"top":-980},1000);									
+		}
+		$("html,body").stop().animate({"scrollTop":"974px"},1000,"easeOutBounce");
+		
+
+	});
+	$("#section04").on("mousewheel",function(event,delta){			
+		var qwer = $("#section03").offset().top;
+		if(delta < 0){
+			$("html,body").stop().animate({"scrollTop":1948},1000,"easeOutBounce");	
+		}
+
+	});
+
+
+	// 메뉴 클릭했을때 나타나는 효과
+	$("#section03 ul li").click(function(){
+		var test = $(this).index();
+		$("#section03 .menu_item").eq(test).css({"background":"rgba(0,0,0,0.9)","width":"100%"}).show();		
+		return false;
+	});
+	$("#section04 ul li").click(function(){
+		var test = $(this).index();
+		$("#section04 .menu_item").eq(test).css({"background":"rgba(0,0,0,0.9)","width":"100%"}).show();		
+		return false;
+	});
+
+	$(".close").click(function(){
+		$(".menu_item").hide();
+	});
+
+	
+	//글씨  스크롤 이벤트 fadeIn 효과 적용
+	$(window).on("scroll",function(){
+
+		
+		var scr = $(this).scrollTop();
+
+		if(scr >=2700){
+			$("#section06 h1").fadeIn(4000).css({"transform":"scale(1.6)"});
+			return false;
+		}
+		
+		
+		
+	});
+
+	//스크롤 라인 1번
+	$(window).on("scroll",function(){
+
+		
+		var scr = $(this).scrollTop();
+
+		if(scr >=5748){
+			$("#section09 .image_line_01").css({"opacity":"1"});
+			
+		}else{
+			$("#section09 .image_line_01").css({"opacity":"0"});
+		}
+		
+		
+		
+	});
+		//스크롤 라인 2번
+	$(window).on("scroll",function(){
+	
+		var scr = $(this).scrollTop();
+
+		if(scr >=6200){
+			$("#section09 .image_line_02").css({"opacity":"1"});
+			
+		}else{
+			$("#section09 .image_line_02").css({"opacity":"0"});
+		}
+		
+		
+		
+	});
+		//스크롤 라인3번
+	$(window).on("scroll",function(){
+	
+		var scr = $(this).scrollTop();
+
+		if(scr >=6500){
+			$("#section09 .image_line_03").css({"opacity":"1"});
+			
+		}else{
+			$("#section09 .image_line_03").css({"opacity":"0"});
+		}
+		
+		
+		
+	});
+		//스크롤 라인4번
+	$(window).on("scroll",function(){
+	
+		var scr = $(this).scrollTop();
+
+		if(scr >=7300){
+			$("#section09 .image_line_04").css({"opacity":"1"});
+			
+		}else{
+			$("#section09 .image_line_04").css({"opacity":"0"});
+		}
+		
+		
+		
+	});
+		//스크롤 라인5번
+	$(window).on("scroll",function(){
+	
+		var scr = $(this).scrollTop();
+
+		if(scr >=7800){
+			$("#section09 .image_line_05").css({"opacity":"1"});
+			
+		}else{
+			$("#section09 .image_line_05").css({"opacity":"0"});
+		}
+		
+		
+		
+	});
+		//스크롤 라인6번
+	$(window).on("scroll",function(){
+	
+		var scr = $(this).scrollTop();
+
+		if(scr >=8300){
+			$("#section09 .image_line_06").css({"opacity":"1"});
+			
+		}else{
+			$("#section09 .image_line_06").css({"opacity":"0"});
+		}
+		
+		
+		
+	});
+		//스크롤 라인7번
+	$(window).on("scroll",function(){
+	
+		var scr = $(this).scrollTop();
+
+		if(scr >=8900){
+			$("#section09 .image_line_07").css({"opacity":"1"});
+			
+		}else{
+			$("#section09 .image_line_07").css({"opacity":"0"});
+		}
+		
+		
+		
+	});
+	
+	$(window).on("scroll",function(){
+	
+		var scr = $(this).scrollTop();
+
+		if(scr >=9000){
+			$("#section10 .menu_txt").animate({"top":"150px"},1000,"easeOutBounce");
+			
+		}
+		
+		
+		
+	});
+
+
+
+//우산 애니메이션
+	$(window).on("scroll",function(){
+		var scr = $(this).scrollTop();
+		if(scr >= 4270){
+			$("#section08 .item01").stop().animate({"top":"15px","left":"13%"},2000);
+			$("#section08 .item02").stop().animate({"top":"15px","right":"18%"},1500);
+			$("#section08 .item03").stop().animate({"top":"150px","right":"25%"},2000);	
+		}else{
+			$("#section08 .item01").stop().animate({"top":"220px","left":"35%"},2000);
+			$("#section08 .item02").stop().animate({"top":"15px","right":"40%"},1500);
+			$("#section08 .item03").stop().animate({"top":"100px","right":"38%"},2000);	
+		}
+	});
+
+	
+		
+	//메뉴 이동 	
+	$("nav ul li").on("click",function(){
+			var test = $(this).index();
+			var test1 = $("#section01").height();
+			$("html,body").stop().animate({"scrollTop":test*test1},1500);
+			return false;
+	 });
+		
+	//서브메뉴 클릭
+	$("#section09 .on").click(function(){		
+		$(this).find(".sub_main04").show();		
+		$("body").css("background","red");
+		$("#section09 .close").click(function(){
+			$(this).parent().fadeOut();
+		});
+		
+	});
+	
+	
+
+	
+});
+
