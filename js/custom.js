@@ -107,12 +107,14 @@ function welcome_title(){
 // 우산 애니메이션
 function umbrella(){
 	$(window).on("scroll",function(){
-		var scr = $(this).scrollTop();
-		if(scr >= 4200){
-			$("#section08 .item01").animate({"top":"15px","left":"13%"},2000);
+		let umbrella_offsettop = $("#section08 .item01").offset().top;
+		let window_scroll = $(this).scrollTop();
+		if(window_scroll >= umbrella_offsettop-650){
+			$("#section08 .item01").animate({"top":"15px","left":"9%"},2000);
 			$("#section08 .item02").animate({"top":"15px","right":"18%"},1500);
 			$("#section08 .item03").animate({"top":"150px","right":"25%"},2000);	
 		}
+		
 	});
 }
 
@@ -121,11 +123,18 @@ function umbrella(){
 // 마지막 메뉴 스크롤 라인
 function last_line(){
 	$(window).on("scroll",function(){
-		var scr = $(this).scrollTop();
-		console.log(scr);
+		let window_scroll = $(this).scrollTop();
+		let line01 = $("#section09 .image_line_01").offset().top;
+		let line02 = $("#section09 .image_line_02").offset().top;
+		let line03 = $("#section09 .image_line_03").offset().top;
+		let line04 = $("#section09 .image_line_04").offset().top;
+		let line05 = $("#section09 .image_line_05").offset().top;
+		let line06 = $("#section09 .image_line_06").offset().top;
+		let line07 = $("#section09 .image_line_07").offset().top;
+
 
 		// 라인 1번
-		if(scr >=6900){
+		if(window_scroll >= line01-350){
 			$("#section09 .image_line_01").css({"opacity":"1"});
 			
 		}else{
@@ -134,7 +143,7 @@ function last_line(){
 
 
 		// 라인 2번
-		if(scr >=7400){
+		if(window_scroll >= line02-600){
 			$("#section09 .image_line_02").css({"opacity":"1"});
 			
 		}else{
@@ -142,7 +151,7 @@ function last_line(){
 		}
 
 		// 라인 3번
-		if(scr >=7900){
+		if(window_scroll >= line03-400){
 			$("#section09 .image_line_03").css({"opacity":"1"});
 			
 		}else{
@@ -150,7 +159,7 @@ function last_line(){
 		}
 
 		// 라인 4번
-		if(scr >=8550){
+		if(window_scroll >= line04-400){
 			$("#section09 .image_line_04").css({"opacity":"1"});
 			
 		}else{
@@ -158,7 +167,7 @@ function last_line(){
 		}
 
 		//스크롤 라인5번
-		if(scr >=9100){
+		if(window_scroll >= line05-400){
 			$("#section09 .image_line_05").css({"opacity":"1"});
 			
 		}else{
@@ -167,7 +176,7 @@ function last_line(){
 
 
 		//스크롤 라인6번
-		if(scr >=9700){
+		if(window_scroll >= line06-400){
 			$("#section09 .image_line_06").css({"opacity":"1"});
 			
 		}else{
@@ -175,18 +184,13 @@ function last_line(){
 		}
 
 		//스크롤 라인7번
-		if(scr >=10000){
+		if(window_scroll >= line07-400){
 			$("#section09 .image_line_07").css({"opacity":"1"});
 			
 		}else{
 			$("#section09 .image_line_07").css({"opacity":"0"});
 		}
 
-
-		//스크롤 라인 8번
-		if(scr >=9000){
-			$("#section10 .menu_txt").animate({"top":"150px"},1000);
-		}
 
 	})
 }
@@ -210,9 +214,10 @@ function last_menu_click(){
 // 텍스트 이벤트 드롭다운
 function drop_txt_event(){
 	$(window).on("scroll",function(){
-		var scr = $(this).scrollTop();
-		if(scr >=10600){
-			$("#section10 .menu_txt").animate({"top":"150px"},1000);
+		let window_scroll = $(this).scrollTop();
+		let menu_txt = $("#section10 .menu_txt").offset().top;
+		if(window_scroll >= menu_txt-250){
+			$("#section10 .menu_txt").animate({"top":"190px"},1300);
 		}
 	});
 }

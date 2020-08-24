@@ -36,7 +36,7 @@ header,footer,section{display:block;}
 #section01 p {left:30%; top:52%;font-size:26px; font-family: 'Indie Flower', cursive;}
 
 /* section02 두번째이미지 */
-#section02{position: absolute; width:100%; background:rgba(0,0,0,0.5); z-index:1000; top:970px;}
+#section02{position: absolute; width:100%; background:rgba(0,0,0,0.5); z-index:1000; }
 #section02 .txt{position:absolute; top:265px; left:50%; margin-left:-300px;width:700px;}
 #section02 .txt p{font-size:26px; font-family: 'Indie Flower', cursive; letter-spacing:1px;}
 
